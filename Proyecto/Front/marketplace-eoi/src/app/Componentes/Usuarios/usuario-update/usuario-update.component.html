@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+    <section class="inputs">
+    <div><input type="text" formControlName="nombre" [placeholder]="userUpdate.nombre"><br></div>
+    <div><input type="text" formControlName="password" [placeholder]="userUpdate.password"><br></div>
+    <div><input type="text" formControlName="imagen" [placeholder]="userUpdate.imagen"><br></div>
+    </section>
+    <section class="accion">
+    <div>
+    <button (click)="guardar()" [disabled]="!form.valid">Guardar</button>
+</div>
+    <div>
+    <p *ngIf="comprobacion">*Ya existe un usuario con ese nombre</p>
+</div>
+</section>
+</form>

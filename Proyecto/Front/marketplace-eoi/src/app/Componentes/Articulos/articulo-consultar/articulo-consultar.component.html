@@ -1,0 +1,41 @@
+<section *ngIf="!update">
+    <form [formGroup]="art">
+    <label>Busqueda articulo</label><input type="text" placeholder="articulo" formControlName="nombre"
+        (keyup)="buscarArticulo()" />
+    </form><br />
+    <article class="articulos">
+        <ng-container class="contItems" *ngFor="let articulo of articulos">
+            <section class="item">
+                
+                <img [src]="articulo.imagen" [alt]="articulo.nombre"/>
+                
+                <section class="cuerpo">
+                
+                <div class="cuerpo2 info">
+                    <p class="nombre">{{articulo.nombre}}</p>
+                    <p>Stock: {{articulo.stock}}</p>
+                    <p>Precio: {{articulo.precio| currency:'EUR'}}</p>
+                    <p>Pedido: {{articulo.pedido}} veces</p>
+                </div>
+                <div class="cuerpo2 botones">  
+                    <button class="botonItem" (click)="deleteArticuloComprobar(articulo)">Eliminar</button>
+                    <button class="botonItem" (click)="updateItem(articulo)">Actualizar</button>
+                </div>  
+            </section>
+           
+            </section>
+        </ng-container>
+    </article>
+</section>
+<section *ngIf="update">
+    <app-articulo-update [articuloUpdate]="articuloUpdate" (updated)="updated()"></app-articulo-update>
+</section>
+<section class="delete" *ngIf="delete">
+    <div class="subDelete">
+         <div>Eliminar Articulo</div>
+         <div class="buttons">
+        <button (click)="deleteArticulo(articuloDelete)">Confirmar</button>
+        <button (click)="cancelarDelete()">Cancelar</button>
+    </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+
+   
+    <app-nav (logout)="salir()"></app-nav>
+    
+    <section class="buttons">
+        <button class="botones " (click)="optionButton('usuarios')">Usuarios</button>
+        <button class="botones " (click)="optionButton('articulos')">Articulos</button>
+        <button class="botones " (click)="optionButton('pedidos')">Pedidos</button>
+    </section>
+    
+    <section class="main">
+    <div class="sideNav" *ngIf="marcado==true">
+        <section class="buttons2">
+        <button class="botones" (click)="consultar()">Consultar</button>
+        <button class="botones" (click)="nuevo()">Nuevo</button>
+    </section>
+    </div>
+    <div class="router">
+    <router-outlet></router-outlet>
+    </div> 
+    </section>

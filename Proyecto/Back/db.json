@@ -1,0 +1,77 @@
+{
+  "usuario": [
+    {
+      "id": "1",
+      "nombre": "user1",
+      "password": "password",
+      "imagen": "https://aumentada.net/wp-content/uploads/2015/05/user.png",
+      "pedidos": 11
+    },
+    {
+      "nombre": "user2",
+      "password": "pa",
+      "imagen": "https://aumentada.net/wp-content/uploads/2015/05/user.png",
+      "id": 4
+    },
+    {
+      "nombre": "user3",
+      "password": "234",
+      "imagen": "https://aumentada.net/wp-content/uploads/2015/05/user.png",
+      "id": 5
+    }
+  ],
+  "articulo": [
+    {
+      "nombre": "Articulo 1",
+      "precio": 5,
+      "stock": 10,
+      "pedido": null,
+      "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fsymbol-blue-set-3%2F100%2FUntitled-1-94-512.png&f=1&nofb=1",
+      "id": 1
+    },
+    {
+      "nombre": "Articulo 2",
+      "precio": 3,
+      "stock": 20,
+      "pedido": 0,
+      "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fsymbol-blue-set-3%2F100%2FUntitled-1-94-512.png&f=1&nofb=1",
+      "id": 2
+    },
+    {
+      "nombre": "Articulo 3",
+      "precio": 10,
+      "stock": 30,
+      "pedido": null,
+      "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fsymbol-blue-set-3%2F100%2FUntitled-1-94-512.png&f=1&nofb=1",
+      "id": 3
+    }
+  ],
+  "pedido": [
+    {
+      "articulos": [
+        {
+          "nombre": "Articulo 1",
+          "precioTotal": 25,
+          "id": 1,
+          "cantidad": 5
+        }
+      ],
+      "nombre": "Pedido1",
+      "fecha": "12/03/2021",
+      "id": 1
+    },
+    {
+      "articulos": [
+        {
+          "nombre": "Articulo 3",
+          "precioTotal": 70,
+          "id": 3,
+          "cantidad": 7
+        }
+      ],
+      "nombre": "Pedido 2",
+      "fecha": "18/07/21",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<section class="body">
+<p class="titulo">Nuevo Artículo</p>
+<form [formGroup]="form">
+   <section class="inputs">
+    <div><input type="text" placeholder="Nombre" formControlName="nombre"><br></div>
+    <div><input type="number" placeholder="Precio" formControlName="precio"><br></div>
+    <div><input type="number" placeholder="Stock" formControlName="stock"><br></div>
+    <div><input type="text" placeholder="Url Imagen" formControlName="imagen"><br></div>
+    </section>
+    <section class="accion">
+    <div class="boton">
+    <button (click)="nuevoArticulo()" [disabled]="!form.valid">Crear</button>
+    </div>
+    <div class="mensaje">
+    <p *ngIf="articuloExiste==true">*Ya existe un artículo con ese nombre</p>
+    <p *ngIf="articuloGuardado==true">*Articulo Guardado</p>
+    </div>
+</section>
+</form>
+</section>
+

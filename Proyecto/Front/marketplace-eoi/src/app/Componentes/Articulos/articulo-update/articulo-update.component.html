@@ -1,0 +1,13 @@
+
+<form [formGroup]="form">
+    <section class="inputs">
+        <div><input type="text" formControlName="nombre" [placeholder]="articuloUpdate.nombre"><br></div>
+        <div><input type="number" formControlName="precio" [placeholder]="articuloUpdate.precio"><br></div>
+        <div><input type="number" formControlName="stock" [placeholder]="articuloUpdate.stock"><br></div>
+        <div><input type="text" formControlName="imagen" [placeholder]="articuloUpdate.imagen"><br></div>
+    </section>
+    <section class="accion">
+    <div><button (click)="guardar()" [disabled]="!form.valid">Guardar</button></div>
+    <div><p *ngIf="comprobacion">*Ya existe un articulo con el mismo nombre</p></div>
+    </section>  
+</form>

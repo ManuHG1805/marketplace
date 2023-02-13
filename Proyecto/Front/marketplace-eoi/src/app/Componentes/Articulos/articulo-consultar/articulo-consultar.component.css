@@ -1,0 +1,102 @@
+.articulos{
+    /* display:flex; */
+    width:auto;
+    
+     /* flex-direction: column;
+    justify-content: center; */
+     } 
+
+    .item{
+       /* border:black 1px solid; */
+        margin: 1em;
+        width: 17vw;
+        border: black solid 1px;
+        border-top:rgb(201, 3, 3)solid 6px;
+         border-bottom:rgb(201, 3, 3)solid 3px ;
+         border-radius:10px;
+        float:left;
+        height: auto;
+        font-size: auto;
+        padding: 1px;
+    }
+    .item:hover{
+        box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    }
+
+    .item img{
+        width: 100%;
+        height: auto;
+        max-height:300px ;
+    }
+
+
+
+.botonItem{
+    outline:none;
+    border:black solid 1px;
+    margin: 5px;
+    margin-top: 10px;
+    font-size: auto;
+    /* display:flex;
+    align-items: center; */
+cursor:pointer;
+}
+
+.cuerpo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 0;
+    
+}
+
+.cuerpo2{
+    /* border:solid black 1px; */
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    padding:0;
+}
+.botones{
+width: 40%;
+padding-right: 5px;
+padding-top: 5px;
+
+}
+
+.info p{
+    margin:4px;
+}
+
+.nombre{
+    font-size: large;
+    font-weight: bolder;
+}
+
+.delete{
+    position:absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(0,0,10,.5);
+}
+
+
+.subDelete{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+ background: white;
+ position:relative;
+ top:20%;
+ left:30%;
+ width: 20vw;
+    height: 14vh;
+    border:3px black solid;
+    border-radius: 20px;
+}
+.subDelete > .buttons button{
+    flex:none;
+    margin:1vw;
+    cursor:pointer;
+}

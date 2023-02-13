@@ -1,0 +1,22 @@
+<section class="login-box">
+    <form>
+        <div class="user-box">  
+        <input type="text" name="nombre" required="" [(ngModel)]="usuario.nombre"><br>
+        <label>Usuario</label>
+        </div>
+        <div class="user-box">     
+        <input type="password" name="password" required="" [(ngModel)]="usuario.password"><br>
+        <label>Contraseña</label>
+        </div>
+        <span class="nologin" *ngIf="usuarioErroneo==true">*Usuario o contraseña incorrectos</span>
+        <div>
+        <button (click)="login()">Acceder</button>
+        </div>
+        </form>  
+</section>
+
+
+
+
+  
+  

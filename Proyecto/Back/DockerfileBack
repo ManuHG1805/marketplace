@@ -1,0 +1,7 @@
+FROM node:14.16-alpine
+RUN npm i -g json-server
+EXPOSE 3000
+WORKDIR /opt
+COPY Proyecto/Back/db.json .
+CMD ["json-server","-H","0.0.0.0","--watch","/opt/db.json"]
+#CMD ["sleep","1d"]

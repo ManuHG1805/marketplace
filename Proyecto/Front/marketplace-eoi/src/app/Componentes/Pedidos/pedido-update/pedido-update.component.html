@@ -1,0 +1,41 @@
+<form [formGroup]="form">
+    <input type="text" [placeholder]="pedidoCreado.nombre" formControlName="nombre"><br>
+    <input type="text" [placeholder]="pedidoCreado.fecha" formControlName="fecha"><br>
+</form>
+<form [formGroup]="art">
+        <label>Busqueda articulo</label><input type="text" placeholder="Articulo" formControlName="articulonombre"
+            (keyup)=" buscarAticulo()"><br>
+        
+        <article class="articulos">
+            <ng-container *ngIf ="comprobar">
+                <section class="item">
+                    <h2>{{articuloBuscado.nombre}}</h2>
+                    <div>
+                        <p>Stock: {{articuloBuscado.stock}}</p>
+                    </div>
+                    <div>
+                        <p>Precio: {{articuloBuscado.precio | currency:'EUR'}}</p>
+                    </div>
+                    <div *ngIf ="articuloBuscado.stock>0">
+                        <p>Cantidad<input maxlength="5" size="5" type="text" formControlName="cantidad" (keyup)="Cantidad()"></p>
+                        <p *ngIf="comprobarCantidad" >Cantidad incorrecta</p>
+                    </div>
+                    <div>
+                        <button (click)="seleccionarArticulo(articuloSeleccionado.cantidad)" [disabled]="!art.valid||comprobarCantidad||articuloSeleccionado.cantidad<=0 || articuloBuscado.stock<=0">Añadir</button>
+                    </div>
+                </section>
+            </ng-container>
+            <ng-container *ngIf ="articuloEnPedido">*El articulo ya se encuentra en el pedido</ng-container>
+        </article>
+    </form>
+
+    <ng-container *ngFor="let art of pedidoCreado.articulos">
+        <div>{{ art.nombre }}</div>
+        <div>{{ art.cantidad }} Uds</div>
+        <div>{{ art.precioTotal | currency:'EUR' }} </div>
+        <button (click)="deleteArticulo(art)" >Delete</button>
+    </ng-container>
+
+
+    <button (click)="nuevoPedido()" [disabled]="!pedidoCreado.articulos||pedidoCreado.articulos.length<=0">Guardar</button>
+    <p *ngIf="pedidoGuardado==true">Pedido guardado</p>

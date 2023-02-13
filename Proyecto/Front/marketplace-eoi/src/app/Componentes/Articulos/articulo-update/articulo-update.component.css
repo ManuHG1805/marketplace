@@ -1,0 +1,33 @@
+form{
+    /* padding-top:30%;
+    padding-left: 50%; */
+   width:auto;
+   height: auto;
+  padding-top: 6vh;
+ display:flex;
+ flex-direction: column;
+}
+input{
+    border:none;
+    font-size:15px;
+    border-bottom:2px solid rgb(30, 52, 65);
+}
+
+form div{
+    width: auto;
+    font-size:20px;
+    display:block;
+    height: auto;
+    padding-right:9vw;
+    padding-bottom: 5vw;
+   
+}
+.inputs div{
+    float:left;
+}
+
+.titulo{
+    font-size: large;
+    font-weight: bolder;  
+    text-decoration: underline;
+}

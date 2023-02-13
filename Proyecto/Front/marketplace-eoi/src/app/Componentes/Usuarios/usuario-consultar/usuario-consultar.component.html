@@ -1,0 +1,38 @@
+
+<section *ngIf="!update">
+    <form [formGroup]="us">
+    <label>Busqueda usuario</label><input type="text" placeholder="usuario" formControlName="nombre"
+        (keyup)="buscarUsuario()" />
+    </form>
+        <br />
+<article class="usuarios">
+    <ng-container *ngFor ="let usuario of usuarios">
+        <section class="item">
+            
+            <img [src]="usuario.imagen"/>
+            <section class="cuerpo">
+            <div class="cuerpo2 info">
+            <p class="nombre">{{usuario.nombre}}</p>
+            <p>Pedidos: {{usuario.pedidos}}</p>
+            </div>  
+            <div class="cuerpo2 botones">
+                <button class="botonItem" (click)="deleteUsuarioComprobar(usuario)">Eliminar</button>
+                <button class="botonItem" (click)="updateItem(usuario)">Actualizar</button>
+            </div>           
+        </section>
+    </section>
+    </ng-container>
+</article>
+</section>
+<section *ngIf="update">
+    <app-usuario-update [userUpdate]="userUpdate" (updated)="updated()"></app-usuario-update>
+</section>
+<section class="delete" *ngIf="delete">
+    <div class="subDelete">
+         <div>Eliminar Usuario</div>
+         <div class="buttons">
+        <button (click)="deleteUsuario(usuarioDelete)">Confirmar</button>
+        <button (click)="cancelarDelete()">Cancelar</button>
+    </div>
+    </div>
+</section>

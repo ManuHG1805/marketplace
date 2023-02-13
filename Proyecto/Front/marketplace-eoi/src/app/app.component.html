@@ -1,0 +1,10 @@
+<div class="cuerpo">
+<div *ngIf="logged">
+    <app-dashboard (logout)="logout()"> </app-dashboard>
+</div>
+ 
+ <div  class="log" *ngIf="!logged">
+    <app-login (userLogin)="userLogin()"></app-login>
+</div>
+
+</div>

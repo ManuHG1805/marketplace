@@ -1,0 +1,47 @@
+<section *ngIf="!update">
+  <form [formGroup]="ped">
+    <label>Busqueda pedidos</label
+    ><input
+      type="text"
+      placeholder="pedido"
+      formControlName="nombre"
+      (keyup)="buscarPedido()"
+    /><br />
+  </form>
+  <article class="articulos">
+    <ng-container *ngFor="let pedido of pedidos">
+      <section class="item">
+        <h2>{{ pedido.nombre }}</h2>
+        <p>Fecha pedido: {{ pedido.fecha }}</p>
+        <div>
+          <p>Total: {{pedido.articulos | total: "precioTotal"| currency:'EUR'}}</p>
+        </div>
+        <ng-container *ngFor="let art of pedido.articulos">
+          <div>{{ art.nombre }}x{{ art.cantidad }}</div>
+        </ng-container>
+        <div class="iconos">
+          <button class="botonItem" (click)="deletePedidoComprobar(pedido)">
+            Eliminar
+          </button>
+
+          <button class="botonItem" (click)="updateItem(pedido)">Actualizar</button>
+        </div>
+      </section>
+    </ng-container>
+  </article>
+</section>
+<section *ngIf="update">
+  <app-pedido-update
+    [pedidoUpdate]="pedidoUpdate"
+    (updated)="updated()"
+  ></app-pedido-update>
+</section>
+<section class="delete" *ngIf="delete">
+  <div class="subDelete">
+    <div>Eliminar Pedido</div>
+    <div class="buttons">
+      <button (click)="deletePedido(pedidoDelete)">Confirmar</button>
+      <button (click)="cancelarDelete()">Cancelar</button>
+    </div>
+  </div>
+</section>

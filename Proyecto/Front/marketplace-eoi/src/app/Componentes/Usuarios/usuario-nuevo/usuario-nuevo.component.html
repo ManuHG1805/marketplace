@@ -1,0 +1,17 @@
+<section class="body">
+<p class="titulo">Nuevo Usuario</p>
+<form [formGroup]="form"> 
+    <section class="inputs">
+    <div><input type="text" placeholder="Nombre" formControlName="nombre"><br></div>
+    <div><input type="text" placeholder="Password" formControlName="password"><br></div>
+    <div><input type="text" placeholder="Url Imagen" formControlName="imagen"><br></div>
+</section>
+<section class="accion">
+    <div class="boton"><button (click)="nuevoUsuario()" [disabled]="!form.valid">Crear</button></div>
+    <div class="mensaje">
+    <p *ngIf="usuarioExiste==true">*Ya existe un usuario con ese nombre</p>
+    <p *ngIf="usuarioGuardado==true">*Usuario guardado</p>
+    </div>
+</section>
+</form>
+</section>
